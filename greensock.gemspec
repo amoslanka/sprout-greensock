@@ -1,11 +1,12 @@
 # -*- encoding: utf-8 -*-
 # $:.push File.expand_path("../lib", __FILE__)
-require 'lib/puremvc-as3'
-# require "sprout-papervision/version"
+# require File.dirname(__FILE__) + '/lib/greensock'
+require File.join(File.dirname(__FILE__), "lib", "greensock")
+
 
 Gem::Specification.new do |s|
-  s.name        = PureMVC_AS3::NAME
-  s.version     = PureMVC_AS3::VERSION
+  s.name        = Greensock::NAME
+  s.version     = Greensock::VERSION
   # s.platform    = Gem::Platform::RUBY
   # s.authors     = ["TODO: Write your name"]
   s.email       = ["amoslanka@gmail.com"]
@@ -20,7 +21,7 @@ Gem::Specification.new do |s|
   # s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   s.require_paths = ["lib"]
   
-  s.files = FileList['lib/**/*.rb', 'bin/*', '[A-Z]*', 'test/**/*', "#{PureMVC_AS3::SVN_DIR}**/*"].to_a
+  s.files = FileList['lib/**/*.rb', 'bin/*', '[A-Z]*', 'test/**/*'].to_a
 
   s.add_dependency 'sprout', '>= 1.0.26.pre'
   

@@ -1,30 +1,25 @@
 require 'sprout'
-# require 'papervision3d/version'
 
-module PureMVC_AS3
-  # Your code goes here...
-  
-  NAME = "puremvc-as3"
-  VERSION = "2.0.4"
-  
-  SVN_URL = "http://svn.puremvc.org/PureMVC_AS3/tags/#{VERSION}/"
-  SVN_DIR = "./#{VERSION}/"
-  
-  # WARNING, PureMVC's download zip is version agnostic. This may result in incremented PureMVC version
-  # beyond the accurate version number of this sprout/gem.
-  
-  # Perhaps in order to correct this, the svn source should be retrieved instead. (TODO)
+module Greensock
+
+  NAME = "greensock"
+  VERSION = "0.1.0.pre"
   
 end
 
 Sprout::Specification.new do |s|
-   s.name    = PureMVC_AS3::NAME
-   s.version = PureMVC_AS3::VERSION
+   s.name    = Greensock::NAME
+   s.version = Greensock::VERSION
    
-   s.add_file_target do |t|
+   s.add_remote_file_target do |t|
+     # Apply the windows-specific configuration:
      t.platform = :universal
-     t.add_library :swc, "../#{PureMVC_AS3::SVN_DIR}bin"
-     t.add_library :asdocs, "../#{PureMVC_AS3::SVN_DIR}asdoc"
+     # Apply the shared platform configuration:
+     # Remote Archive:
+     t.archive_type = :zip
+     t.url = "http://www.greensock.com/as/greensock-as3.zip"
+     t.md5          = "48ce7343e8d004c3bc9e335dc0c2f190"
+     t.add_library :swc, "greensock.swc"
    end
    
 end
