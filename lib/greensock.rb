@@ -1,10 +1,7 @@
 require 'sprout'
+require 'greensock/version'
 
 module Greensock
-
-  NAME = "greensock"
-  VERSION = "0.1.0.pre"
-  
 end
 
 Sprout::Specification.new do |s|
@@ -12,14 +9,17 @@ Sprout::Specification.new do |s|
    s.version = Greensock::VERSION
    
    s.add_remote_file_target do |t|
-     # Apply the windows-specific configuration:
      t.platform = :universal
-     # Apply the shared platform configuration:
-     # Remote Archive:
      t.archive_type = :zip
      t.url = "http://www.greensock.com/as/greensock-as3.zip"
-     t.md5          = "48ce7343e8d004c3bc9e335dc0c2f190"
-     t.add_library :swc, "greensock.swc"
+     t.md5          = "5571e64359f7d77fa272dd9ed32dfb38"
+
+     # All 
+     t.add_library :swc, "greensock-as3/greensock.swc"
+     t.add_library :src, "greensock-as3"
+     t.add_library :docs, "greensock-as3/docs"
+     t.add_library :demos, "greensock-as3/demo_swfs"
+     t.add_library :all, "greensock-as3"
    end
    
 end

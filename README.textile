@@ -1,8 +1,6 @@
 
 h1. The Greensock Sprout Gem
 
-h4. requires sprout, v >= 1.0.x.pre
-
 	Greensock's free AS3 library including TweenLite, TweenMax, and LoaderMax, wrapped in a Sprout::Specification for implementation into a sprout project and Gem::Specification for distribution as a gem. 
 	
 	The sprout will download the Greensock zip from the greensock.com and the swc will be copied to lib/greensock of your sprout project.
@@ -12,12 +10,13 @@ h3. Installation
 Intended for use with a project using Project Sprouts. 
 
 See information concerning Project Sprouts here: 
-* "http://github.com/lukebayes/project-sprouts" http://github.com/lukebayes/project-sprouts
-* "http://github.com/lukebayes/sprout-flashsdk" http://github.com/lukebayes/sprout-flashsdk
+* "http://github.com/lukebayes/project-sprouts/wiki":http://github.com/lukebayes/project-sprouts/wiki
+* "http://github.com/lukebayes/project-sprouts":http://github.com/lukebayes/project-sprouts
+* "http://github.com/lukebayes/sprout-flashsdk":http://github.com/lukebayes/sprout-flashsdk
 
 Add the Greensock gem to your Gemfile:
 
-	<pre><code>gem "greensock"</code></pre>
+	<pre><code>gem "greensock", ">= 0.1.0.pre"</code></pre>
 
 Add the Greensock library dependency to your Rakefile:
 
@@ -25,13 +24,13 @@ Add the Greensock library dependency to your Rakefile:
 
 Enter this shell command to resolve gem dependency: 
 
-	<pre><code>bundle install</code></pre>
+	<pre><code>$ bundle install</code></pre>
 
 h3. Ruby Gem
 
 The gem can be installed independently of a project entering this command:
 
-<pre><code>gem install greensock</code></pre>
+<pre><code>$ gem install greensock --pre</code></pre>
 
 h3. Whats included
 
@@ -40,29 +39,47 @@ Normally a sprout gem's version should parallel the version of the library it wr
 The version representing the greensock sprout gem will attempt to follow its own path, incrementing patches whenever the version of an included greensock library is bumped.
 The following libraries are included:
 
-The Greensock Tweening Platform v11
+*The Greensock Tweening Platform v11*
 
-* "http://www.greensock.com/tweennano/" TweenNano 
+* "TweenNano":http://www.greensock.com/tweennano/
+
 	Version: 1.05, Updated 2010-05-11
 	File size added to compressed SWF: About 1.6kb (AS3), or 2kb (AS2)
-* "http://www.greensock.com/tweenlite/" TweenLite
+
+* "TweenLite":http://www.greensock.com/tweenlite/
+
 	Version: 11.39, Updated 2010-09-27
 	File size added to compressed SWF: about 4.7kb
-* "http://www.greensock.com/tweenmax/" TweenMax
+
+* "TweenMax":http://www.greensock.com/tweenmax/
+
 	Version: 11.39, Updated 2010-09-27
 	File size added to compressed SWF: About 8.7kb (base), or 17.6kb with default plugins and OverwriteManager
-* "http://www.greensock.com/timelinelite/" TimelineLite
+
+* "TimelineLite":http://www.greensock.com/timelinelite/
+
 	Version: 1.392, Updated 2010-10-13
 	File size added to compressed SWF: About 2.5k (base), 8.1k with OverwriteManager and TweenLite
-* "http://www.greensock.com/timelinemax/" TimelineMax
+
+* "TimelineMax":http://www.greensock.com/timelinemax/
+
 	Version: 1.392, Updated 2010-10-13
 	File size added to compressed SWF: about 4.9k (base), 10.4k with OverwriteManager and TweenLite
 
-Other included libraries
+*Other included libraries*
 
-* "http://www.greensock.com/tweennano/" LoaderMax
+* "LoaderMax":http://www.greensock.com/tweennano/
+
 	Version: 1.631, Updated 2010-10-13
+	
+h3. Included entities
 
+	<pre><code>library :greensock, :swc	# includes greensock.swc at lib/greensock/greensock.swc (default)</code></pre>
+	<pre><code>library :greensock, :src	# includes all source code at lib/greensock/</code></pre>
+	<pre><code>library :greensock, :docs	# includes documentation at lib/greensock/docs</code></pre>
+	<pre><code>library :greensock, :demo	# includes demo swfs at lib/greensock/</code></pre>
+	<pre><code>library :greensock, :all	# includes all entities</code></pre>
+	
 h3. Additional links
 
 * "Greensock Site":http://www.greensock.com/v11/
